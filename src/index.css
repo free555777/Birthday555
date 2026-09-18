@@ -1,0 +1,171 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", "Cormorant Garamond", Georgia, serif;
+  --font-cormorant: "Cormorant Garamond", serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-handwriting: "Dancing Script", "Great Vibes", cursive;
+
+  --color-romantic-bg: #FFF0F2;
+  --color-romantic-blush: #FFE3E8;
+  --color-romantic-lightpink: #FFD5DD;
+  --color-romantic-cream: #FFF8F5;
+  --color-romantic-white: #FFFFFF;
+  --color-romantic-pink: #F45B82;
+  --color-romantic-strongpink: #E83D6F;
+  --color-romantic-rose: #C93B61;
+  --color-romantic-text: #6D3046;
+  --color-romantic-subtext: #9B6577;
+  --color-romantic-gold: #D9A441;
+}
+
+/* Base HTML and Body lock for Mobile App Experience */
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  background-color: #FFF0F2;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+/* Support modern 100svh and notch safe areas */
+.app-screen-container {
+  height: 100vh;
+  height: 100svh;
+  width: 100vw;
+  max-width: 1440px;
+  overflow: hidden;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  padding-left: env(safe-area-inset-left, 0px);
+  padding-right: env(safe-area-inset-right, 0px);
+}
+
+/* Luxury Romantic Paper & Card Styles */
+.card-romantic {
+  background: linear-gradient(145deg, #FFFFFF 0%, #FFF8F5 100%);
+  border: 1px solid rgba(255, 213, 221, 0.85);
+  box-shadow: 0 12px 35px -8px rgba(244, 91, 130, 0.15), 0 4px 12px rgba(109, 48, 70, 0.04);
+}
+
+.card-romantic-subtle {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 227, 232, 0.9);
+  box-shadow: 0 10px 30px -10px rgba(201, 59, 97, 0.12);
+}
+
+.pill-romantic {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 213, 221, 0.8);
+  box-shadow: 0 4px 15px rgba(244, 91, 130, 0.08);
+}
+
+/* Romantic Glow and Gradients */
+.btn-romantic-primary {
+  background: linear-gradient(135deg, #F45B82 0%, #E83D6F 100%);
+  color: #FFFFFF;
+  box-shadow: 0 8px 25px -4px rgba(244, 91, 130, 0.45), 0 3px 8px rgba(232, 61, 111, 0.25);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-romantic-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px -4px rgba(244, 91, 130, 0.55), 0 5px 12px rgba(232, 61, 111, 0.35);
+}
+
+.btn-romantic-primary:active {
+  transform: translateY(0px) scale(0.98);
+}
+
+.btn-romantic-secondary {
+  background: rgba(255, 255, 255, 0.85);
+  color: #6D3046;
+  border: 1px solid rgba(255, 213, 221, 0.9);
+  box-shadow: 0 4px 16px rgba(109, 48, 70, 0.06);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-romantic-secondary:hover {
+  background: #FFFFFF;
+  color: #E83D6F;
+  border-color: #F45B82;
+  transform: translateY(-1px);
+}
+
+/* Vinyl rotation animation */
+@keyframes vinylSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-vinyl-spin {
+  animation: vinylSpin 7s linear infinite;
+}
+
+.animate-vinyl-spin-paused {
+  animation-play-state: paused;
+}
+
+/* Gentle floating animation for petals & hearts */
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(3deg);
+  }
+}
+
+.animate-float-gentle {
+  animation: floatGentle 5s ease-in-out infinite;
+}
+
+/* Soft candle flame flicker */
+@keyframes flameFlicker {
+  0%, 100% {
+    transform: scale(1) rotate(-1deg);
+    opacity: 0.95;
+  }
+  25% {
+    transform: scale(1.06, 0.96) rotate(1.5deg);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.96, 1.04) rotate(-0.5deg);
+    opacity: 0.9;
+  }
+  75% {
+    transform: scale(1.03, 1.02) rotate(1deg);
+    opacity: 1;
+  }
+}
+
+.animate-flame-flicker {
+  animation: flameFlicker 1.8s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+/* Hide scrollbar helper */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

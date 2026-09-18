@@ -1,0 +1,6 @@
+{
+  "name": "Our Story — A Romantic Birthday Surprise",
+  "description": "An interactive mobile-app-like romantic birthday celebration with 9 cinematic screens, love letters, moments, cosmic orbit, and birthday wish.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
