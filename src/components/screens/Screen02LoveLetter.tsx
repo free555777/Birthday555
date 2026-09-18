@@ -14,7 +14,7 @@ export const Screen02LoveLetter: React.FC<Screen02LoveLetterProps> = ({ config, 
   const letter = config.loveLetters && config.loveLetters.length > 0
     ? config.loveLetters[0]
     : {
-        salutation: `Dearest ${config.partnerName || 'Maya'},`,
+        salutation: `Dearest ${config.partnerName || 'My Love'},`,
         body: [
           'Happy Birthday to the girl who made my entire universe stop spinning and start feeling like home.',
           'If someone had told me years ago that an ordinary day could turn into starlight just because of a single smile, I would not have believed them. Until you walked into my life.',

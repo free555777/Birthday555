@@ -333,15 +333,25 @@ export const HomeHub: React.FC<HomeHubProps> = ({ onNavigate }) => {
           </div>
         )}
 
-        {/* Try Live Sample Demo Button */}
+        {/* Dynamic Story Preview / Live Sample Demo Button */}
         <div className="w-full text-center mt-2 mb-6">
-          <button
-            onClick={() => onNavigate('/love/maya-birthday')}
-            className="inline-flex items-center space-x-2 px-5 py-2.5 rounded-full bg-white/80 border border-[#FFD5DD] text-[#6D3046] hover:text-[#E83D6F] hover:border-[#E83D6F]/40 shadow-sm transition-all text-xs sm:text-sm font-semibold cursor-pointer"
-          >
-            <Cake className="w-4 h-4 text-[#E83D6F]" />
-            <span>View Sample Romantic Experience (Maya's Birthday) →</span>
-          </button>
+          {storedStories.length > 0 ? (
+            <button
+              onClick={() => onNavigate(`/love/${storedStories[0].publicSlug}`)}
+              className="inline-flex items-center space-x-2 px-6 py-3 rounded-full bg-white/90 border border-[#FFD5DD] text-[#6D3046] hover:text-[#E83D6F] hover:border-[#E83D6F]/40 shadow-sm hover:shadow-md transition-all text-xs sm:text-sm font-semibold cursor-pointer"
+            >
+              <Cake className="w-4 h-4 text-[#E83D6F]" />
+              <span>View Surprise Experience ({storedStories[0].recipientName}'s Birthday) →</span>
+            </button>
+          ) : (
+            <button
+              onClick={() => onNavigate('/love/maya-birthday')}
+              className="inline-flex items-center space-x-2 px-5 py-2.5 rounded-full bg-white/80 border border-[#FFD5DD] text-[#6D3046] hover:text-[#E83D6F] hover:border-[#E83D6F]/40 shadow-sm transition-all text-xs sm:text-sm font-semibold cursor-pointer"
+            >
+              <Cake className="w-4 h-4 text-[#E83D6F]" />
+              <span>View Sample Romantic Experience Demo →</span>
+            </button>
+          )}
         </div>
       </div>
 
